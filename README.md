@@ -1,6 +1,7 @@
 # NLP Vectorization Techniques to Group Jeopardy Questions
 
 Capstone Project for General Assembly Data Science Immersive Program
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Jeopardy.jpg">
 
 October 22, 2018
 
@@ -17,11 +18,22 @@ The LDA model groups questions by class and outputs all questions belonging to t
 
 Eventually, instead of using only Jeopardy questions, I have a vision where it can be applied as a general purpose learning tool for students.
 
-# Data Analysis
+# Data Source
 
 The dataset was downloaded as a CSV file from this link: https://drive.google.com/file/d/0BwT5wj_P7BKXUl9tOUJWYzVvUjA/view
 
 The data was originally scraped from a website that archives Jeopardy questions: http://j-archive.com
+
+# EDA
+
+The dataset had 216,930 questions and seven features.
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Screen%20Shot%202018-10-20%20at%202.41.08%20PM.png">
+
+During the EDA phase, I saw some of the Jeopardy categories were used frequently. Also, the same answers appeared many times as well. All of the popular answers were place names.
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Question%20Categories.png">
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Answer%20Distribution.png">
+
+Some of the questions were audio and video clues and I decided to drop those observations. Furthermore, there were two questions that had null values so I dropped those as well.
 
 # Model Evaluation Metric
 
@@ -41,17 +53,31 @@ DBSCAN performed more poorly than KMeans-- especially when the features were ext
 
 **3) Doc2Vec:**
 
-Doc2Vec performed really well (as expected). Using Doc2Vec's '.most_similar' method, I got similarity scores and the index of questions that were most alike to the original question. I then outputed the top 10 most similar questions. It's not perfect but it performs pretty well.
+Doc2Vec performed really well (as expected). Using Doc2Vec's '.most_similar' method, I got similarity scores and the index of questions that were most alike to the original question. I then outputed the top 10 most similar questions. It's not perfect but it performs pretty well. I attached an example cluster for your review.
 
-**4) LDA (with t-SNE for dimension reduction):**
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/doc2vec.png">
+
+**4) LDA with t-SNE:**
 
 LDA performed surpsingly well too. Visually checking, the clusters were bleeding into each other a little bit so I thought the model wouldn't work as well as Doc2Vec. 
 However, after checking the question clusters heuristically, I was surprised by how well some groups related topically.
 Some groups clustered better than others (due to repetitive keywords) but overall, I considered it rather successful. 
 
-<img src = "https://git.generalassemb.ly/suhw/jeopardy/blob/master/Assets/similar_output.png">
+Keywords:
 
-<img src = "https://git.generalassemb.ly/suhw/jeopardy/blob/master/Assets/similar_output_pop_culture.png">
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/similar_output.png">
+
+Questions pertaining to pop culture/TV shows:
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/similar_output_pop_culture.png">
+
+LDA visualization:
+
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/lda%20tsne.png">
+
+5) **KMeans on top of t-SNE:**
+
+I applied KMeans clustering on top the LDA/t-SNE model above to see if it would cluster better. The model became more transparent but the question clusters began to lose some relevancy.
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/kmeans%20tsne.png">
 
 # Limitations
 
@@ -66,6 +92,8 @@ Please refer to presentation.pptx for further information.
 # Next Steps
 
 I want to scrape the Jeopardy archive website myself to get the most up-to-date dataset and train the Doc2Vec model again with a larger corpus. 
+
+Also, I wish to use non-negative matrix factorization (NMF) to see what keywords belong to each topic. This could help aspiring contestants study by using keywords as hints.
 
 # Directory
 
