@@ -109,6 +109,14 @@ processed questions that are in a list form to be used with Doc2Vec
 
 Processed questions (using BeautifulSoup, lemmatization, lower-cased, and regex'd)
 
+**JEOPARDY_CSV.csv**
+
+Original CSV file
+
+**assets**
+
+Screenshots of visualizations/datasets
+
 # Sources
 
 <a href = "http://www.emilyinamillion.me/blog/2016/7/13/visualizing-supreme-court-topics-over-time">Visualizing Supreme Court Topics Over Time</a>
