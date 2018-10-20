@@ -109,11 +109,11 @@ processed questions that are in a list form to be used with Doc2Vec
 
 Processed questions (using BeautifulSoup, lemmatization, lower-cased, and regex'd)
 
-**JEOPARDY_CSV.csv**
+**JEOPARDY_CSV.csv:**
 
 Original CSV file
 
-**assets**
+**assets:**
 
 Screenshots of visualizations/datasets
 
