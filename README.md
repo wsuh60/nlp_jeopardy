@@ -45,7 +45,10 @@ Although heuristic evaluation could be subjective to interpretation, I believe i
 **1) KMeans with 10, 50, and 100 centroids with CountVec and TFIDF feature extraction:**
 
 KMeans clustering did not perform very well. Visually, the clusters were too general with 10 and 50 centroids. I thought 100 centroids might provide better clusters but when I checked the clusters heuristically, there were some questions that were similar but a lot of unrelated questions were present.
-Cluster groups were assigned by the nearest centroid by Euclidean distance. 
+Cluster groups were assigned by the nearest centroid by Euclidean distance.
+
+KMeans (50 centroids) visualization:
+<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Kmeans_PCA.png">
 
 **2) DBSCAN with CountVec and TFIDF feature extraction:**
 
