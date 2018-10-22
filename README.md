@@ -90,7 +90,7 @@ The model would have performed better if there were more questions to train Jeop
 Furthermore, it is hard to visually graph the Doc2Vec model's clusters and it isn't as transparent as KMeans or DBSCAN's clusters.
 
 # Presentation
-Please refer to presentation.pptx for further information.
+Please refer to <a href = "https://docs.google.com/presentation/d/1MXwM_13vPM6xBJ0eUIizN7QWoJjIiLLPPV_W-KaCccQ/edit?usp=sharing">this link</a> for further information.
 
 # Next Steps
 
