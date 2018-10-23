@@ -1,7 +1,7 @@
 # NLP Vectorization Techniques to Group Jeopardy Questions
 
 Capstone Project for General Assembly Data Science Immersive Program
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Jeopardy.jpg">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/Jeopardy.jpg">
 
 October 22, 2018
 
@@ -27,11 +27,11 @@ The data was originally scraped from a website that archives Jeopardy questions:
 # EDA
 
 The dataset had 216,930 questions and seven features.
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Screen%20Shot%202018-10-20%20at%202.41.08%20PM.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/Screen%20Shot%202018-10-20%20at%202.41.08%20PM.png">
 
 During the EDA phase, I saw some of the Jeopardy categories were used frequently. Also, the same answers appeared many times as well. All of the popular answers were place names.
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Question%20Categories.png">
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Answer%20Distribution.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/Question%20Categories.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/Answer%20Distribution.png">
 
 Some of the questions were audio and video clues and I decided to drop those observations. Furthermore, there were two questions that had null values so I dropped those as well.
 
@@ -48,10 +48,10 @@ KMeans clustering did not perform very well. Visually, the clusters were too gen
 Cluster groups were assigned by the nearest centroid by Euclidean distance.
 
 KMeans (50 centroids with CountVec) visualization:
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/Kmeans_PCA.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/Kmeans_PCA.png">
 
 KMeans (10 centroids with TFIDF) visualization:
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/KMeans10_TFIDF.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/KMeans10_TFIDF.png">
 
 **2) DBSCAN with CountVec and TFIDF feature extraction:**
 
@@ -61,7 +61,7 @@ DBSCAN performed more poorly than KMeans-- especially when the features were ext
 
 Doc2Vec performed really well (as expected). Using Doc2Vec's '.most_similar' method, I got similarity scores and the index of questions that were most alike to the original question. I then outputed the top 10 most similar questions. It's not perfect but it performs pretty well. I attached an example cluster for your review.
 
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/doc2vec.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/doc2vec.png">
 
 **4) LDA with t-SNE:**
 
@@ -71,19 +71,19 @@ Some groups clustered better than others (due to repetitive keywords) but overal
 
 Keywords:
 
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/similar_output.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/similar_output.png">
 
 Questions pertaining to pop culture/TV shows:
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/similar_output_pop_culture.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/similar_output_pop_culture.png">
 
 LDA visualization:
 
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/lda%20tsne.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/lda%20tsne.png">
 
 5) **KMeans on top of t-SNE:**
 
 I applied KMeans clustering on top the LDA/t-SNE model above to see if it would cluster better. The model became more transparent but the question clusters began to lose some relevancy.
-<img src = "https://git.generalassemb.ly/suhw/NLP_Jeopardy/blob/master/assets/kmeans%20tsne.png">
+<img src = "https://github.com/wsuh60/nlp_jeopardy/blob/master/assets/kmeans%20tsne.png">
 
 # Limitations
 
