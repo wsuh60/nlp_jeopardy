@@ -8,7 +8,7 @@ October 22, 2018
 # Executive Summary
 
 The objective of my capstone is to group Jeopardy questions based on keywords. Jeopardy questions already have category titles but they are often "tongue-in-cheek" titles that offer contextual clues for answers.
-Thus, using cateogry titles to categorize questions is not the most optimal way to study a subject.
+Thus, using category titles to categorize questions is not the most optimal way to study a subject.
 
 Therefore, I wanted to build an unsupervised model that would cluster Jeopardy questions by their true topic based on keywords and topics. People who are training for Jeopardy can optimize their studies
 by grouping similar topical questions together instead of relying on category titles provided by Jeopardy. 
